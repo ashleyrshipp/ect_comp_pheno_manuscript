@@ -1,4 +1,4 @@
-# LOOCV LDA MODEL USING INDIVIDUALLY-FIT VPRL + SUBJ COEF PARAMS
+# LOOCV LDA MODEL USING INDIVIDUALLY-FIT VPRL + SUBJ COEF PARAMETERS
 
 packages <- c("graphics", "base", "MASS", "ROCR", "pROC", "FactoMineR", "factoextra",
               "dplyr", "ggplot2", "stats", "caret", "verification")
