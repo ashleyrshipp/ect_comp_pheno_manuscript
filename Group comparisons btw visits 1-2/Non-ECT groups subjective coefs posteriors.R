@@ -102,35 +102,42 @@ ev_unchosen_neg_dist_v2 <- c(
   non_ect_v2_subj_coef_dists$ev_unchosen_neg
 )
 
-
 groups <- c(
-  rep("no-depression", length(no_depression_v1_subj_coef_medians$intercept)),
-  rep("non-ect", length(non_ect_v1_subj_coef_medians$intercept))
+  rep(
+    "no-depression",
+    length(no_depression_v1_subj_coef_dists$intercept)
+  ),
+  rep(
+    "non-ect",
+    length(non_ect_v1_subj_coef_dists$intercept)
+  )
 )
 
-subj_coef_medians <- data.frame(
-  intercept_median_v1,
-  intercept_median_v2,
-  rpe_pos_median_v1,
-  rpe_pos_median_v2,
-  rpe_abs_neg_median_v1,
-  rpe_abs_neg_median_v2,
-  ppe_pos_median_v1,
-  ppe_pos_median_v2,
-  ppe_abs_neg_median_v1,
-  ppe_abs_neg_median_v2,
-  ev_chosen_pos_median_v1,
-  ev_chosen_pos_median_v2,
-  ev_unchosen_pos_median_v1,
-  ev_unchosen_pos_median_v2,
-  ev_chosen_neg_median_v1,
-  ev_chosen_neg_median_v2,
-  ev_unchosen_neg_median_v1,
-  ev_unchosen_neg_median_v2,
+
+subj_coef_distributions <- data.frame(
+  intercept_dist_v1,
+  intercept_dist_v2,
+  rpe_pos_dist_v1,
+  rpe_pos_dist_v2,
+  rpe_abs_neg_dist_v1,
+  rpe_abs_neg_dist_v2,
+  ppe_pos_dist_v1,
+  ppe_pos_dist_v2,
+  ppe_abs_neg_dist_v1,
+  ppe_abs_neg_dist_v2,
+  ev_chosen_pos_dist_v1,
+  ev_chosen_pos_dist_v2,
+  ev_unchosen_pos_dist_v1,
+  ev_unchosen_pos_dist_v2,
+  ev_chosen_neg_dist_v1,
+  ev_chosen_neg_dist_v2,
+  ev_unchosen_neg_dist_v1,
+  ev_unchosen_neg_dist_v2,
   groups
 )
 
-saveRDS(subj_coef_medians,"Data/visit-2/group/subjective-rating-model-data/vis1vis2_subj_coef_dists.rds")
+saveRDS(subj_coef_distributions,"Data/visit-2/non-ect-vs-no-depression/subjective-rating-model-data/vis1vis2_subj_coef_dists.rds")
+
 
 ## Medians
 #visit 1
