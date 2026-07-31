@@ -15,7 +15,7 @@ for o = 1:numel(subjnum)
 end 
 
 elseif cohort == 2 % non-ECT 
-filepath = fullfile('Data/non-ECT/visit-1/matlab_regressors', 'RegressorsV1.mat');
+filepath = fullfile('Data/Non-ECT/visit-1/matlab_regressors', 'RegressorsV1.mat');
 load(filepath, 'RegressorsV1');
 
 subjnum = [1:38];
@@ -27,7 +27,7 @@ end
 
 
 elseif cohort == 3 % no-depression 
-filepath = fullfile('Data/no-depression/visit-1/matlab_regressors', 'RegressorsV1.mat');
+filepath = fullfile('Data/No-depression/visit-1/matlab_regressors', 'RegressorsV1.mat');
 load(filepath, 'RegressorsV1');
 
 subjnum = [1:41];
@@ -86,7 +86,7 @@ matlabbatch{1}.spm.stats.fmri_spec.timing.fmri_t0 = 1;  %microtime onset
         
     elseif cohort == 3
         cd /Volumes/Data/No-depression
-        matlabbatch{1}.spm.stats.fmri_spec.dir = cellstr(['/Volumes/Data/No-depression/No-depression_' num2str(subjnum(1,i)) '/VISIT_1/spm/' char(directory)]); 
+        matlabbatch{1}.spm.stats.fmri_spec.dir = cellstr(['/Volumes/Data/No-depression/No-depression_' num2str(subjnum(1,i)) '/visit-1/spm/' char(directory)]); 
         for j = 0:numscans(1,i)
             if j <= 9
                 matlabbatch{1}.spm.stats.fmri_spec.sess.scans(j+1,1) = cellstr(['/Volumes/Data/No-depression/No-depression_' num2str(subjnum(1,i)) '/visit-1/func/swvol000' num2str(j) '.nii,1']);
