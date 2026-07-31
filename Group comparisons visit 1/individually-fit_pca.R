@@ -1,11 +1,9 @@
-# PCA - INDIVIDUALLY-FIT VPRL + SUBJ COEF PARAMETERS
+# PCA - INDIVIDUALLY-FIT VPRL + SUBJECTIVE COEFFICIENT PARAMETERS
 
 packages <- c("FactoMineR", "factoextra", "kableExtra", "base", "dplyr",
               "ggplot2", "graphics", "stats", "corrplot")
 lapply(packages, require, character.only=TRUE)
 source("R/utils_pca_functions.R")
-
-cohort <- c(rep("Controls", 40), rep("ECT",29), rep("non-ECT",40))
 
 #visit 1 individually-fit subjective rating regression parameters
 ect_v1_subj_medians <- readRDS("Data/visit-1/ect/individually-fit-data/ind_sub_medians.rds")
@@ -134,7 +132,7 @@ ggplot(pca_scores, aes(x = PC1, y = PC2, fill=cohort)) +
 
 #pairs plot
 components <- data.frame(pca_scores)
-components$cohort <-factor(components$cohort,levels=c("non-ECT", "ECT", "Controls"))
+components$cohort <-factor(components$cohort,levels=c("non-ECT", "pre-ECT", "no-depression"))
 colors <- c("#652A57", "#20A4F3", "#979799")
 create_pairs_plot1t7(components, colors)
 create_pairs_plot8t14(components, colors)
